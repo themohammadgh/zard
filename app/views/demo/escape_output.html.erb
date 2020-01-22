@@ -1,0 +1,19 @@
+<% evil_string = "<script>alert('Gotcha!');</script>" %>
+<% good_string = "<strong>Welcome to my site!</strong>" %>
+<% link = '<p>please <b>visit</b> <a href="https://google.com">Google</a></p>' %>
+
+
+<%= evil_string %><br />
+<%= good_string %><br />
+<%= h evil_string %><br /> <!-- h <=> html_escape() -->
+<%= h good_string %><br />
+<%= raw evil_string %><br /> <!--one time safe-->
+<%= raw good_string %><br />
+<%= evil_string.html_safe %><br /> <!--one time safe-->
+<%= good_string.html_safe %><br />
+
+<%= sanitize(link, :tags => ['b'], :attributes => ['id']) %><br /> <!--lets them to execute-->
+<%= strip_links(link) %><br />
+<%= strip_tags(link) %> <br />
+<%= link.html_safe %> <br />
+

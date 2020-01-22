@@ -1,0 +1,22 @@
+<h1>Hello World from index!</h1>
+<%= 1 + 1%>
+<% two = 1 + 1%>
+
+<% target = "World"%>
+<%= "Hellos #{two} the #{target}"%><br />
+
+
+<% @array.each do |n|%>
+    <%= n%><br />
+<%end%>
+
+
+
+<a href="https://google.com">Google</a><br />
+<%= link_to('hello',"hello") %><br />
+<%= link_to('hello with additional parameters', {:action => 'hello', :page => 5, :id => 20}) %><br />
+
+
+
+<h1>Demo#index</h1>
+<p>Find me in app/views/demo/index.html.erb</p>
