@@ -9,7 +9,11 @@ $dark_brown: #332318;
 $light_brown: #4C2516;
 $white: #FFFFFF;
 
-$sans_serif: Verdana,Lucida,Arial,Helvetica,sans-serif;
+$sans_serif: Verdana,
+Lucida,
+Arial,
+Helvetica,
+sans-serif;
 
 html {
   height: 100%;
@@ -26,23 +30,46 @@ body {
   color: $dark_brown;
 }
 
-p, td, ul, ol, li, dl, dt, dd {
+p,
+td,
+ul,
+ol,
+li,
+dl,
+dt,
+dd {
   font-family: $sans_serif;
 }
 
-img { border: none; }
-table { border-collapse: collapse; }
+img {
+  border: none;
+}
 
-table tr th, table tr td {
+table {
+  border-collapse: collapse;
+}
+
+table tr th,
+table tr td {
   vertical-align: top;
   text-align: left;
   padding: 3px;
 }
-a, a:visited { color: $red; }
+
+a,
+a:visited {
+  color: $red;
+}
+
 a:hover {}
 
-.clear { clear: both; }
-.center { text-align: center; }
+.clear {
+  clear: both;
+}
+
+.center {
+  text-align: center;
+}
 
 /* Structure */
 #header {
@@ -52,7 +79,10 @@ a:hover {}
   background: $red;
   color: $white;
 
-  h1 { margin: 0; padding: 0; }
+  h1 {
+    margin: 0;
+    padding: 0;
+  }
 }
 
 #main {
@@ -69,7 +99,9 @@ a:hover {}
   color: $light_brown;
 }
 
-#content { padding: 10px; }
+#content {
+  padding: 10px;
+}
 
 #footer {
   clear: both;
@@ -91,9 +123,11 @@ a:hover {}
     list-style: none;
     margin: 0;
     padding: 0;
+
     li {
       margin-bottom: 0.5em;
     }
+
     ul {
       margin: 0.5em 0 0 1em;
       font-size: 0.9em;
@@ -103,6 +137,7 @@ a:hover {}
   a {
     text-decoration: none;
     padding: 1px 3px;
+
     &:hover {
       background: $yellow;
     }
