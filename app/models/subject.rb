@@ -13,5 +13,6 @@ class Subject < ApplicationRecord
     scope :search, lambda {|query| where (["id Like ?","%#{query}%"])}
 
     validates_presence_of :name
+    validates_length_of :name, :maximum => 255
 
 end

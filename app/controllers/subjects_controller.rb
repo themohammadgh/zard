@@ -1,27 +1,31 @@
 class SubjectsController < ApplicationController
+  layout "admin"
 
-
-  layout 'admin'
   def index
     @subjects = Subject.all.order(:position => "ASC")
-    #@page_title = "All Areas" 
+    # logger.debug("besyar ziba va jazzzzab mibinid ke index mikone in bazikon.")
+    #@page_title = "All Areas"
   end
-    def show
-      @subject = Subject.find(params[:id])
+
+  def show
+    @subject = Subject.find(params[:id])
+    cookies[@subject.name] = "#{@subject.name} clicked show."
+    session[@subject.name] = "darbareye for jafar"
   end
 
   def new
     @subject = Subject.new(:name => "Default")
     @subject_count = Subject.count + 1
   end
+
   def create
     @subject = Subject.new(subject_params)
-    if @subject.save 
+    if @subject.save
       flash[:notice] = "subject created successfully!"
       redirect_to(subjects_path)
     else
       @subject_count = Subject.count + 1
-      render('new')
+      render("new")
     end
   end
 
@@ -29,20 +33,22 @@ class SubjectsController < ApplicationController
     @subject = Subject.find(params[:id])
     @subject_count = Subject.count
   end
+
   def update
     @subject = Subject.find(params[:id])
-    if @subject.update_attributes(subject_params) 
+    if @subject.update_attributes(subject_params)
       flash[:notice] = "subject updated successfully!"
       redirect_to(subjects_path(@subject))
     else
       @subject_count = Subject.count + 1
-      render('edit')
+      render("edit")
     end
   end
 
   def delete
     @subject = Subject.find(params[:id])
   end
+
   def destroy
     @subject = Subject.find(params[:id])
     @subject.destroy
@@ -50,9 +56,9 @@ class SubjectsController < ApplicationController
     redirect_to(subjects_path)
   end
 
+  private
 
-  private 
   def subject_params
-  params.require(:subject).permit(:name, :position, :visible)
+    params.require(:subject).permit(:name, :position, :visible)
   end
 end
