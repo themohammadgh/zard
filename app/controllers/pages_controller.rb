@@ -2,6 +2,7 @@ class PagesController < ApplicationController
 
   layout 'admin'
 
+  before_action :confirm_logged_in
   before_action :find_subjects, :only => [:new, :create, :edit, :update]
   # consider the inefficienty that his adds, because you might 
   # not use all subjects in all parts of the function
