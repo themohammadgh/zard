@@ -4,12 +4,12 @@
   <h2>Create Subject</h2>
 
   <%= form_for(@subject) do |f| %>
-    <!--locals sends the info needed to the partial "form" we are rendering-->
-    <%= render(:partial => 'form', :locals => {:f => f}) %>
+  <!--locals sends the info needed to the partial "form" we are rendering-->
+  <%= render(:partial => 'form', :locals => {:f => f}) %>
 
-    <div class="form-buttons">
-      <%= f.submit("Create Subject") %>
-    </div>
+  <div class="form-buttons">
+    <%= f.submit("Create Subject") %>
+  </div>
 
   <% end %>
 </div>
